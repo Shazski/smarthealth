@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body id="bgimage" style="background-image:linear-gradient(to left,rgba(234,234,191,1),rgba(193, 240, 187, 0.73)),url('https://tse1.mm.bing.net/th?id=OIP.4oPGNjsnvMD9QgN_o1vAmQHaEK&pid=Api&P=0&w=306&h=172');">
+    <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Register Doctor</h2>
+                <form action="/add-doctor" method="post" enctype="multipart/form-data">
+
+                    <label for="">Name</label>
+                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="hospitalCode" value="{{id}}" hidden class="form-control">
+
+                    <label for="">Hospital Name</label>
+                    <input type="text" name="hospitalName" class="form-control">
+
+                    <label for="">Specialization</label><br>
+                    <input type="radio" name="Specialization" value="cardiology">
+                    <label for="html">Cardiology</label><br>
+                    <input type="radio" name="Specialization" value="ophthalmology">
+                    <label for="html">Ophthalmology</label><br>
+                    <input type="radio" name="Specialization" value="neurology">
+                    <label for="html">Neurology</label><br>
+                    <input type="radio" name="Specialization" value="psychology">
+                    <label for="html">Psychology</label><br>
+                    <input type="radio" name="Specialization" value="dermatology">
+                    <label for="html">Dermatology</label><br>
+                    <label for="">Description</label>
+                    <input type="text" name="description" class="form-control">
+
+                    <label for="">Image</label>
+                    <input type="file" name="image" class="form-control">
+
+                    <button type="submit" class="btn btn-success mt-4">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

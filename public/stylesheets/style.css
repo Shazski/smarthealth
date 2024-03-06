@@ -1,0 +1,32 @@
+
+
+#emailerr{
+  background-color: #dc35451c;
+  height: 2.5em;
+  color: red;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 6px;
+}
+.navbar-brand{
+  color:white;
+}
+.nav-link{
+  color: white;
+}
+
+#checkcart{
+  background-color: #dc35451c;
+  height:auto;
+  
+  color: red;
+  border: 2px;
+  border-style: double;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 4px;
+}
+a{
+  color: black;
+}
+

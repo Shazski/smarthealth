@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body id="bgimage" style="background-image:linear-gradient(to left,rgba(234,234,191,1),rgba(119, 110, 117, 0.73)),url('https://tse1.mm.bing.net/th?id=OIP.4oPGNjsnvMD9QgN_o1vAmQHaEK&pid=Api&P=0&w=306&h=172');">
+    <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Add Hospital</h2>
+                <form action="/admin/add-hospital" method="post" enctype="multipart/form-data">
+
+                    <label for="">Hospital Name</label>
+                    <input type="text" name="name" class="form-control">
+
+                    <label for="">Location</label>
+									<li><select  class="form-control"  required  class="" name="district" id=""></li>
+                                    <li><option value="tvm">Trivandrum</option></li>
+									<li><option value="kollam">Kollam</option></li>
+									<li><option value="kottayam">Kottayam</option></li>
+									<li><option value="alappuzha">Alappuzha</option></li>
+									<li><option value="pathanamthitta">Pathanamthitta</option></li>
+									<li><option value="idukki">Idukki</option></li>
+									<li><option value="ernakulam">Ernakulam</option></li>
+									<li><option value="thrissur">Thrissur</option></li>
+									<li><option value="palakkad">Palakkad</option></li>
+									<li><option value="malappuram">Malappuram</option></li>
+									<li><option value="kozhikode">Kozhikode</option></li>
+									<li><option value="wayanad">Wayanad</option></li>
+									<li><option value="kannur">Kannur</option></li>
+									<li><option value="kasaragod">Kasaragod</option></li>
+                                    </select>
+									
+								
+
+                    <h4 for="">Departments</h4><br>
+                    
+                    <label for="">Cardiology</label>
+                    <input type="checkbox" name="departments" value="cardiology" ><br>
+                    
+                    <label for="">Ophthalmology</label>
+                    <input type="checkbox" name="departments" value="ophthalmology" ><br>
+                    
+                    <label for="">Neurology</label>
+                    <input type="checkbox" name="departments" value="neurology" ><br>
+                    
+                    <label for="">Psychology</label>
+                    <input type="checkbox" name="departments" value="psychology" ><br>
+                    
+                    <label for="">Dermatology</label>
+                    <input type="checkbox" name="departments" value="dermatology" ><br>
+
+                    <label for="">Description</label>
+                    <input type="text" name="description" class="form-control">
+
+                    <label for="">Login Code</label>
+                    <input type="text" name="loginCode"  class="form-control">
+
+
+
+                    <label for="">Image</label>
+                    <input type="file" name="image" class="form-control">
+
+                    <button type="submit" class="btn btn-success mt-4">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 style="color:rgb(0, 0, 0) ;" class="text-center">Edit products</h2>
+                <form action="/admin/edit-products/{{newPro._id}}" method="post" enctype="multipart/form-data">
+
+                    <label for="">Name</label>
+                    <input type="text" name="name" class="form-control" value="{{newPro.name}}">
+
+                    <label for="">loginCode</label>
+                    <input type="text" name="loginCode" class="form-control" value="{{newPro.loginCode}}">
+
+                    <label for="">Description</label>
+                    <input type="text" name="description" class="form-control" value="{{newPro.description}}">
+
+                    <label for="">Image</label>
+                    <img src="/images/{{newPro._id}}.jpg" alt="" style="height:50px ;width:50px;" id="img" >
+                    <input type="file" name="image" class="form-control" onchange="editImage(event)" >
+
+                    <button type="submit" class="btn btn-success mt-4">Submit</button>  
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function editImage(event){
+        document.getElementById('img').src=URL.createObjectURL(event.target.files[0])
+    }
+</script>

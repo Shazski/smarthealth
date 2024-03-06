@@ -1,0 +1,69 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+
+    <title></title>
+  </head>
+  <body>
+  
+      <h1 style="margin-left: 500px;font-family: 'Times New Roman', Times, serif;">{{hospital.details.name}}</h1>
+      <h4 style="margin-left: 600px;font-family: 'Times New Roman', Times, serif;">doctors List</h4>
+  <div class="content">
+    
+    <div class="container">
+
+      <div class="table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>
+              <th scope="col">
+              </th>
+              <th scope="col">Doctor name</th>
+              <th scope="col">Hospital Name</th>
+              <th scope="col">Specialization</th>
+              <th scope="col">Experience</th>
+            </tr>
+          </thead>
+          <tbody>
+              {{#each doctors}}
+            <tr>
+              <th scope="row">
+              </th>
+              <td>
+                {{this.name}}
+              </td>
+              <td>{{this.hospitalName}}</td>
+              <td>
+                {{this.Specialization}}
+              </td>
+              <td>{{this.description}}</td>
+              </td>
+            </tr>
+            {{/each}}
+           
+            
+            
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+  </div>
+    
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

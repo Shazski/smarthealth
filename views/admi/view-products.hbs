@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="background-image: url( 62862be04256997d0cfcc23e.jpg`); font-family: 'Times New Roman', Times, serif; background-image:linear-gradient(to right,rgb(191, 205, 234),rgba(194, 243, 200, 0.73)),url(https://tse4.mm.bing.net/th?id=OIP.p6rNletQZV9j-9TJg9OhawHaFj&pid=Api&P=0&w=214&h=160)";>
+  
+<div class="container">
+    <div class="row">
+    </div>
+    <div>
+      
+    </div>
+    <table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Login Code</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image</th>
+      <th scope="col">Edit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp; &nbsp;Delete</th>
+
+    </tr>
+  </thead>
+  {{#each hospitals}}
+  <body>
+    <tr>
+      <td>{{this.name}}</td>
+      <td>{{this.loginCode}}</td>
+      <td>{{this.description}}</td>
+      <td><img style="width: 50px;height:50px;" src="/images/{{this._id}}.jpg" alt="image not found"></td>
+      <td><a href="/admin/edit-products/{{this._id}}" class="btn btn-primary">Edit</a>
+          <a href="/admin/delete-products/{{this._id}}" class="btn btn-danger" onclick="return confirm('are you want to delete the product {{this.name}}')" >Delete</a>
+
+      </td>
+    </tr>
+    {{/each}}
+  </body>
+</table>
+</div>
+
+</body>
+</html>
