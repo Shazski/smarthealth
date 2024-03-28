@@ -1,29 +1,21 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title></title>
+</head>
 
-    <title></title>
-  </head>
-  <body>
-  
-
+<body>
   <div class="content">
-    
     <div class="container">
-
       <div class="table-responsive">
-
         <table class="table custom-table">
           <thead>
             <tr>
-              <th scope="col">
-              </th>
+              <th scope="col"></th>
               <th scope="col">Doctor name</th>
               <th scope="col">Patient name</th>
               <th scope="col">Patient Email</th>
@@ -35,52 +27,66 @@
             </tr>
           </thead>
           <tbody>
-              {{#each requests}}
+            {{#each requests}}
             <tr>
-              <th scope="row">
-              </th>
-              <td>
-                {{this.doctorName}}
-              </td>
-              <td>
-                {{this.name}}
-              </td>
+              <th scope="row"></th>
+              <td>{{this.doctorName}}</td>
+              <td>{{this.name}}</td>
               <td>{{this.email}}</td>
-              <td>
-                {{this.Phone}}
-              </td>
+              <td>{{this.Phone}}</td>
               <td>{{this.gender}}</td>
+              <td>{{this.date}}</td>
+              <td><input name="time" type="time" onchange=""></td>
               <td>
-                  {{this.date}}
+                <button onclick="acceptRequest('{{this.email}}', '{{this._id}}', this)" class="btn btn-success">
+                  <i class="fa fa-check"></i>
+                </button>
               </td>
               <td>
-                  {{this.time}}
-              </td>
-              <td>
-                <button onclick="location='/approve?email={{this.email}}&id={{this._id}}'"class="btn btn-success"><i class="fa fa-check"></i></button>
-              </td>
-              <td>
-                  <button onclick="location='/reject?email={{this.email}}&id={{this._id}}'" class="btn btn-danger"><i class="fa fa-remove"></i></button>
+                <button onclick="showRejectReasonInput(this)" class="btn btn-danger">
+                  <i class="fa fa-remove"></i>
+                </button>
+                <input type="text" class="reject-reason" style="display: none;" placeholder="Reason for rejection">
+                <button onclick="confirmReject(this, '{{this.email}}', '{{this._id}}')" class="btn btn-danger"
+                  style="display: none;">Reject</button>
               </td>
             </tr>
             {{/each}}
-           
-            
-            
           </tbody>
         </table>
       </div>
-
-
     </div>
-
   </div>
-    
-    
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <script>
+    function acceptRequest(email, id, button) {
+      var row = button.closest('tr');
+      var timeValue = row.querySelector('input[name="time"]').value;
+      location.href = '/approve?email=' + email + '&id=' + id + '&time=' + timeValue;
+    }
+
+    function showRejectReasonInput(button) {
+      var row = button.closest('tr');
+      var rejectReasonInput = row.querySelector('.reject-reason');
+      var rejectButton = row.querySelector('.btn-danger');
+      var confirmButton = row.querySelector('.btn-danger:last-child');
+
+      rejectReasonInput.style.display = 'inline-block';
+      rejectButton.style.display = 'none';
+      confirmButton.style.display = 'inline-block';
+    }
+
+    function confirmReject(button, email, id) {
+      var row = button.closest('tr');
+      var reasonInput = row.querySelector('.reject-reason');
+      var reason = reasonInput.value.trim();
+      if (reason === "") {
+        alert("Please provide a reason for rejection.");
+        return;
+      }
+      location.href = '/reject?email=' + email + '&id=' + id + '&reason=' + reason;
+    }
+  </script>
+</body>
+
 </html>
