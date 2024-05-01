@@ -180,6 +180,11 @@ router.get('/delete-appoinment/:id', hospitalverify, (req, res) => {
     res.redirect('/view-accepted-appoinment')
   })
 })
+router.get('/delete-doctor/:id', hospitalverify, (req, res) => {
+  userHelper.deleteDoctor(req.params.id).then((response) => {
+    res.redirect('/all-doctors')
+  })
+})
 
 router.get('/all-doctors', hospitalverify, async (req, res) => {
   hospital = req.session.hospitalIndex

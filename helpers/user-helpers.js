@@ -194,6 +194,13 @@ module.exports = {
             })
         })
     },
+    deleteDoctor: (id) => {
+        return new Promise((resolve, reject) => {
+            db.get().collection(collName.doctor_collection).deleteOne({ _id: ObjectId(id) }).then((response) => {
+                resolve(response)
+            })
+        })
+    },
 
     getAllDoctors: (hospitalId) => {
         return new Promise((resolve, reject) => {

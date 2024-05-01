@@ -29,6 +29,7 @@
               <th scope="col">Hospital Name</th>
               <th scope="col">Specialization</th>
               <th scope="col">Experience</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -45,6 +46,7 @@
               </td>
               <td>{{this.description}}</td>
               </td>
+              <td><a class="btn btn-danger" href="/delete-doctor/{{this._id}}">delete</a></td>
             </tr>
             {{/each}}
            
